@@ -35,7 +35,6 @@ group :development, :test do
   gem 'ffaker'
   gem 'rspec-rails'
   gem 'pry'
-  gem 'pry-coolline'
   gem 'pry-stack_explorer'
 end
 
