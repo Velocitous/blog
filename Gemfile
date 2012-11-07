@@ -10,10 +10,11 @@ gem 'bson_ext'
 # Controller gems
 gem 'decent_exposure'
 
+# State management
+gem 'state_machine'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-
 
 # Gems used only for assets and not required
 # in production environments by default.
