@@ -31,7 +31,7 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'mocha'
+  gem 'mocha', require: 'mocha_standalone'
   gem 'ffaker'
   gem 'fabrication'
   gem 'rspec-rails'
