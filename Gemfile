@@ -33,6 +33,7 @@ group :development, :test do
   gem 'capybara'
   gem 'mocha'
   gem 'ffaker'
+  gem 'fabrication'
   gem 'rspec-rails'
   gem 'pry'
   gem 'pry-stack_explorer'
