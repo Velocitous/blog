@@ -1,7 +1,7 @@
 require 'active_model'
 require 'mongoid'
 module Persistence
-  class Post
+  class Article
     include Mongoid::Document
 
     field :author
