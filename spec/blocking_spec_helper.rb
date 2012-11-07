@@ -1,25 +1,30 @@
+configs = (Dir.glob "**/{mongoid,database}.yml")
 
-require 'mongo'
-require 'mongoid'
+if configs.any?
+  if configs.include? "config/mongoid.yml"
 
-ENV['MONGOID_ENV'] ||= 'test'
+    require 'mongo'
+    require 'mongoid'
 
-config_file = File.join(Dir.pwd, 'config/mongoid.yml')
-if File.exists? config_file
-  begin
-    ::Mongoid.load! config_file
-  rescue ::Mongoid::Errors::NoSessionsConfig  => e
-    handle_configuration_error e
-  rescue ::Mongoid::Errors::NoDefaultSession  => e
-    handle_configuration_error e
-  rescue ::Mongoid::Errors::NoSessionDatabase => e
-    handle_configuration_error e
-  rescue ::Mongoid::Errors::NoSessionHosts    => e
-    handle_configuration_error e
+    ENV['MONGOID_ENV'] ||= 'test'
+
+    config_file = File.join(Dir.pwd, 'config/mongoid.yml')
+    if File.exists? config_file
+      begin
+        ::Mongoid.load! config_file
+      rescue ::Mongoid::Errors::NoSessionsConfig  => e
+        handle_configuration_error e
+      rescue ::Mongoid::Errors::NoDefaultSession  => e
+        handle_configuration_error e
+      rescue ::Mongoid::Errors::NoSessionDatabase => e
+        handle_configuration_error e
+      rescue ::Mongoid::Errors::NoSessionHosts    => e
+        handle_configuration_error e
+      end
+
+    end
   end
-
 end
-
 RSpec.configure do |config|
   require 'database_cleaner'
   config.before :suite do
