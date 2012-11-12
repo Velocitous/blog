@@ -35,6 +35,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'pry'
   gem 'pry-stack_explorer'
 end
