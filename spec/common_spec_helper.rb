@@ -1,5 +1,6 @@
 require 'pry'
 require 'ffaker'
+require 'rspec'
 
 ENV['RAILS_ENV'] ||= 'test'
 ENV['RACK_ENV']  ||= 'test'
@@ -15,7 +16,7 @@ RSpec.configure do |config|
 
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.mock_with :mocha
-  require 'mocha'
+  require 'mocha_standalone'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.

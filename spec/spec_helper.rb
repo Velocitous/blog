@@ -1,3 +1,4 @@
-require 'common_spec_helper'
-$:.unshift(File.join Dir.pwd, 'lib', 'importer')
-$:.unshift(File.join Dir.pwd, 'app')
+$:.unshift (File.join (File.dirname __FILE__), '../' 'lib', 'importer')
+$:.unshift (File.join (File.dirname __FILE__), '../' 'app')
+
+require_relative 'common_spec_helper'
